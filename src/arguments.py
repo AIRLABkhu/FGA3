@@ -77,7 +77,7 @@ def parse_args():
 
 	# FAAG parameer
 	parser.add_argument('--adversarial_alpha', default=1e-2, type=float)
-	parser.add_argument('--adversarial_repeat', default=8, type=int)
+	parser.add_argument('--adversarial_repeat', default=2, type=int)
 	parser.add_argument('--norm', default=25000, type=float)
 
 	# Frequency parameter
