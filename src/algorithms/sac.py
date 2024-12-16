@@ -202,8 +202,8 @@ class SAC(object):
 			x=F.normalize(x,dim=-1,p=2)
 			y=F.normalize(y,dim=-1,p=2)
 			
-			#semantic_distance=2-2*(x*y).sum(dim=-1).mean()
-			semantic_distance=0.5*semantic_loss(self.critic.encoder(obs).detach(),self.critic.encoder(obs_complex))
+			semantic_distance=2-2*(x*y).sum(dim=-1).mean()
+			#semantic_distance=0.5*semantic_loss(self.critic.encoder(obs).detach(),self.critic.encoder(obs_complex))
 
 			
 			# Compute gradients with respect to amplitude only
