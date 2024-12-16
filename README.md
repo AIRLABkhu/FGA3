@@ -60,7 +60,7 @@ You can try other environments easily.
 
 ### Training
 ``` bash
-python src/train.py --domain_name walker --task_name walk --algorithm sac --seed 2087 --eval_episode 30 --action_repeat 4 --adversarial_repeat 8 --adversarial_alpha 1e-2 --norm 1e5 --gpu 0
+python src/train.py --domain_name walker --task_name walk --algorithm sac --seed 2087 --eval_episode 30 --action_repeat 4 --adversarial_repeat 8 --adversarial_alpha 1e-2 --norm 25000 --gpu 0
 ```
 
 ### Contact
