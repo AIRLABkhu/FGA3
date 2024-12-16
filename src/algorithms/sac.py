@@ -185,7 +185,7 @@ class SAC(object):
 		# Get amplitude and Phase
 		amplitude=torch.abs(spectrum)
 		phase=torch.angle(spectrum)
-		semantic_loss=nn.MSELoss(reduction='sum')
+		semantic_loss=nn.MSELoss(reduction='mean')
 		for i in range(self.args.adversarial_repeat):
 
 			# Compute adversarial loss with respect to amplitude
@@ -202,7 +202,10 @@ class SAC(object):
 			x=F.normalize(x,dim=-1,p=2)
 			y=F.normalize(y,dim=-1,p=2)
 			
+			#Cosine Similarity Distance
 			semantic_distance=2-2*(x*y).sum(dim=-1).mean()
+			
+			#Wasserstein Distance
 			#semantic_distance=0.5*semantic_loss(self.critic.encoder(obs).detach(),self.critic.encoder(obs_complex))
 
 			
